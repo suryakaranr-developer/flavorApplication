@@ -1,6 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flavors/remoteConfigurationServices.dart';
 import 'package:flutter/material.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'flavor_config.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -24,12 +28,14 @@ class HomePage extends StatefulWidget {
         heading = remoteConfig.heading;
       });
     }
+    //final FirebaseAuth _auth = FirebaseAuth.instance;
+    final FirebaseAuth _auth = FirebaseAuth.instance;
 
     @override
     Widget build(BuildContext context) {
       return Scaffold(
         body: Stack(
-          children: [
+          children: <Widget>[
              Center(
               child: Text(
             RemoteConfigService().heading,
@@ -37,6 +43,9 @@ class HomePage extends StatefulWidget {
               ),
             ),
             if (!FlavorConfig.isProd) _buildBanner(),
+
+            _buildGoogleSignIn(),
+
           ],
         ),
       );
@@ -59,5 +68,74 @@ class HomePage extends StatefulWidget {
         ),
       );
     }
+
+    Widget _buildGoogleSignIn() {
+      return Positioned(
+        bottom: 150,
+        left: 0,
+        right: 0,
+        child: Center(
+          child: GestureDetector(
+            onTap: () async{
+
+             final user= await googleSignIn();
+
+            },
+            child: const Icon(
+              Icons.g_mobiledata_sharp,
+              size: 80,
+              color: Colors.red,
+            ),
+          ),
+        ),
+      );
+    }
+
+    Future<User> googleSignIn() async {
+      try {
+
+        print(await PackageInfo.fromPlatform());
+
+        final GoogleSignIn signIn = GoogleSignIn.instance;
+
+        await signIn.initialize(
+          serverClientId: "608305254970-e648jq95c86q8ma6geg14iceifh2gqd2.apps.googleusercontent.com",
+        );
+
+
+
+        final GoogleSignInAccount? googleUser =
+        await signIn.authenticate();
+
+        if (googleUser == null) {
+          throw Exception("User cancelled Google Sign-In");
+        }
+
+        final GoogleSignInAuthentication googleAuth =
+        await googleUser.authentication;
+
+        final credential = GoogleAuthProvider.credential(
+          idToken: googleAuth.idToken,
+        );
+
+        final userCredential =
+        await _auth.signInWithCredential(credential);
+
+        final user = userCredential.user;
+
+        if (user == null) {
+          throw Exception("Firebase user is null after sign-in");
+        }
+
+        return user;
+      } catch (e, stackTrace) {
+        print("Google Sign-In Error: $e");
+        rethrow;
+      }
+    }
+
+
+
+
   }
 

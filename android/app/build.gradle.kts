@@ -38,14 +38,15 @@ android {
     productFlavors {
         create("dev") {
             dimension = "env"
-            applicationIdSuffix = ".dev"
+            applicationId = "com.example.flavors.dev"
         }
         create("qa") {
             dimension = "env"
-            applicationIdSuffix = ".qa"
+            applicationId = "com.example.flavors.qa"
         }
         create("prod") {
             dimension = "env"
+            applicationId = "com.example.flavors.prod"
         }
     }
 
@@ -60,4 +61,8 @@ android {
 
 flutter {
     source = "../.."
+}
+
+dependencies {
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
 }
