@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "608305254970",
+    "project_id": "flavor-production-c4d0e",
+    "storage_bucket": "flavor-production-c4d0e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:608305254970:android:9fa1983f213bdaf1799b03",
+        "android_client_info": {
+          "package_name": "com.example.flavors"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "608305254970-e648jq95c86q8ma6geg14iceifh2gqd2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5YbFV_l-zqiyIn5w07mRxdU9UIYh6VFI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "608305254970-e648jq95c86q8ma6geg14iceifh2gqd2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "608305254970-cli02j3o0f3dfa01aqmphveqvrnk85oq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flavors.prod"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:608305254970:android:6d7c3512b5ae62bc799b03",
+        "android_client_info": {
+          "package_name": "com.example.flavors.prod"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "608305254970-c9mh0io7d9gjpck7dh4sj98qpcmhsas4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flavors.prod",
+            "certificate_hash": "d9f2746d07964a9db02b2d585bfda46e048c9668"
+          }
+        },
+        {
+          "client_id": "608305254970-e648jq95c86q8ma6geg14iceifh2gqd2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5YbFV_l-zqiyIn5w07mRxdU9UIYh6VFI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "608305254970-e648jq95c86q8ma6geg14iceifh2gqd2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "608305254970-cli02j3o0f3dfa01aqmphveqvrnk85oq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flavors.prod"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

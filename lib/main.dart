@@ -17,12 +17,12 @@ class MainApp extends StatelessWidget {
 
 // -------- Run dev -------
 
-// flutter run -t lib/main_dev.dart
+//  flutter run --flavor dev  -t lib/main_dev.dart
 
 // -------- Run qa -------
 
-// flutter run -t lib/main_qa.dart
+//  flutter run --flavor qa  -t lib/main_qa.dart
 
 // -------- Run prod -------
 
-// flutter run -t lib/main_prod.dart
+//  flutter run --flavor prod  -t lib/main_prod.dart
